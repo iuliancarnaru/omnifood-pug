@@ -1,3 +1,122 @@
 header {
-    background-image: url(./asset/image/hero.jpg);
+  background-image: linear-gradient(rgba($color-black, 0.7),
+    rgba($color-black, 0.7)),
+    url(./asset/image/hero.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-text-box {
+  position: absolute;
+  width: 114rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__heading {
+    color: $color-white;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    word-spacing: .4rem;
+    margin-bottom: 2rem;
+
+    &--label {
+      display: inline-block;
+    }
+  }
+
+// --------- HEADER BUTTONS ------------
+
+  .btn:link,
+  .btn:visited {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius: 200rem;
+    transition: all .2s;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  .btn:hover,
+  .btn:active {
+    background-color: $color-carrot-dark;
+  }
+
+  .btn--full:link,
+  .btn--full:visited {
+    background-color: $color-carrot;
+    border: .1rem solid $color-carrot;
+    color: $color-white;
+  }
+
+  .btn--full:hover,
+  .btn--full:active {
+    background-color: $color-carrot-dark;
+    border: .1rem solid $color-carrot-dark;
+  }
+
+  .btn--ghost:link,
+  .btn--ghost:visited {
+    border: .1rem solid $color-carrot;
+    border-radius: 200rem;
+    color: $color-carrot;
+  }
+
+  .btn--ghost:hover,
+  .btn--ghost:active {
+    border: .1rem solid $color-carrot-dark;
+    color: $color-white;
+  }
+}
+
+// --------- NAVIGATION ------------
+
+.nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.logo {
+    height: 10rem;
+    width: auto;
+}
+
+.main-nav {
+    list-style: none;
+    font-size: 1.8rem;
+
+    li {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 4rem;
+        }
+
+        a:link,
+        a:visited {
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: .2rem solid transparent;
+            transition: all .2s;
+            padding-bottom: .5rem;
+        }
+
+        a:hover,
+        a:active {
+            border-bottom: .2rem solid $color-carrot;
+        }
+    }
 }
