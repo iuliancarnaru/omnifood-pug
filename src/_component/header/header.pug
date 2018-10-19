@@ -1,0 +1,23 @@
+-
+    const heading = 'Goodbye junk food. Hello super healthy meals.';
+    const btnList = [
+        {
+            label: `I'm hungry`,
+            class: `btn-big`,
+            link: `#`
+        },
+        {
+            label: `Show me more`,
+            class: `btn-small`,
+            link: `#`
+        },
+    ];
+
+header
+    .hero-text-box
+        h1=heading
+        each btnName in btnList
+            a(
+                href=btnName.link,
+                class=btnName.class
+            )=btnName.label
