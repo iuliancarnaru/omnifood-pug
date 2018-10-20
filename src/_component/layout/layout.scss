@@ -23,7 +23,31 @@ body {
 }
 
 .row {
-    width: 114rem;
+    max-width: 114rem;
     margin: 0 auto;
+}
+
+section {
+    padding: 8rem 0;
+}
+
+
+.heading-secondary {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    word-spacing: .2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+
+    &:after {
+        content: "";
+        display: block;
+        height: .2rem;
+        background-color: #e67e22;
+        width: 10rem;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+    }
 }
 

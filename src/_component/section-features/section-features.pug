@@ -28,12 +28,12 @@
 
 section.section-features
     .row
-        h2.section-features__heading=heading
+        h2.heading-secondary=heading
         p.long-copy=longCopy
     .row
-        .col-wrapper
-        each col in columnList
-            .col-div
-                i.icon(class=col.icon)
-                h3=col.title
-                p=col.text
+        .flex-container
+            each col in columnList
+                .flex-col
+                    i.icon(class=col.icon)
+                    h3=col.title
+                    p=col.text
