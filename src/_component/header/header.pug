@@ -46,11 +46,13 @@ header
     nav 
         .row
             .nav-wrapper
-                img.logo(src=logo.src,alt=logo.alt)
-                ul.main-nav
-                    each navItem in navigation.links
-                        li 
-                            a(href=navItem.link)=navItem.name
+                .img-div
+                    img.logo(src=logo.src,alt=logo.alt)
+                .nav-div
+                    ul.main-nav
+                        each navItem in navigation.links
+                            li 
+                                a(href=navItem.link)=navItem.name
 
     .hero-text-box
         h1.hero-text-box__heading
