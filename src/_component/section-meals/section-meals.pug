@@ -36,13 +36,15 @@
         }
     ];
 
-ul.meals-showcase
-    each img in imagesList
-        li
-            figure
-                img(src=img.src, alt=img.alt)
-ul.meals-showcase
-    each img in imagesList2
-        li
-            figure
-                img(src=img.src, alt=img.alt)
+
+section.section-meals
+        ul.meals-showcase
+                each img in imagesList
+                    li
+                        figure.meal-photo
+                            img(src=img.src, alt=img.alt)
+        ul.meals-showcase
+                each img in imagesList2
+                    li
+                        figure.meal-photo
+                            img(src=img.src, alt=img.alt)
