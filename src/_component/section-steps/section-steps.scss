@@ -1,5 +1,51 @@
 .section-steps {
-    .flex-wrapper {
-        display: flex;
+  background-color: $color-gray-light;
+
+  .flex-wrapper {
+    display: flex;
+    margin-top: 3rem;
+  }
+
+  .flex-item {
+
+    &--1 {
+      text-align: right;
+      padding-right: 3%;
     }
+
+    &--2 {
+      font-size: 1.8rem;
+      padding-left: 3%;
+      margin-top: 5rem;
+    }
+  }
+
+  .app-screen {
+    width: 50%;
+  }
+
+  .works-step {
+    margin-bottom: 5rem;
+    display: flex;
+
+    div {
+      flex: 0 0 auto;
+      color: $color-carrot;
+      border: .2rem solid $color-carrot;
+      display: inline-block;
+      border-radius: 50%;
+      height: 5.5rem;
+      width: 5.5rem;
+      text-align: center;
+      padding: .8rem;
+      font-size: 2rem;
+      margin-right: 2rem;
+    }
+  }
+
+  .btn-app img {
+    height: 4rem;
+    width: auto;
+    margin-right: 1rem;
+  }
 }
