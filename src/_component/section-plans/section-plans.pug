@@ -1,0 +1,61 @@
+-
+    var heading = 'Start eating healthy today';
+    var plansList = [
+        {
+            title: 'Premium',
+            price: '$399',
+            description: ' / per month',
+            meal: `That's only $13.30 per meal`,
+            offerList : {
+                item1: '1 meal every day',
+                item2: 'Order 24/7',
+                item3: 'Access to newest creations',
+                item4: 'Free delivery'
+            }
+        },
+        {
+            title: 'Pro',
+            price: '$149',
+            description: ' / per month',
+            meal: `That's only $14.90 per meal`,
+            offerList : {
+                item1: '1 meal 10 days/month',
+                item2: 'Order 24/7',
+                item3: 'Access to newest creations',
+                item4: 'Free delivery'
+            }
+        },
+        {
+            title: 'Starter',
+            price: '$19',
+            description: ' / per meal',
+            meal: `-`,
+            offerList : {
+                item1: '1 meal',
+                item2: 'Order from 8am to 12pm',
+                item3: ' x ',
+                item4: 'Free delivery'
+            }
+        },
+    ];
+
+
+section.section-plans
+    .row
+        h2.heading-secondary=heading
+    .row
+        .flex-container
+            each plan in plansList
+                .flex-item
+                    .plan-box
+                        div
+                            h3=plan.title
+                            p.plan-price=plan.price + plan.description
+                            p.plan-per-meal=plan.meal
+                        div
+                            ul
+                                each item in plan.offerList
+                                    li=item
+                        div
+                            a.btn.btn-full(href="#")
+                                span Sign up now
