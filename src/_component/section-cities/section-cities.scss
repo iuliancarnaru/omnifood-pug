@@ -1,0 +1,56 @@
+.section-cities {
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .flex-item {
+        flex: 0 0 24%;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: .5rem;
+            overflow: hidden;
+        }
+
+        h3 {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            font-size: 2rem;
+        }
+
+        .city-feature {
+            display: flex;
+            align-content: center;
+            align-items: center;
+
+            i {
+                font-size: 1.6rem;
+                color: $color-carrot;
+                margin-right: 1rem;
+            }
+
+            a:link,
+            a:visited {
+                color: $color-carrot;
+                text-decoration: none;
+                border-bottom: .1rem solid $color-carrot;
+                transition: all .2s;
+            }
+
+            a:hover,
+            a:active {
+                color: #777;
+                border-bottom: .1rem solid transparent;
+            }
+
+            p {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
