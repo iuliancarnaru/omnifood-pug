@@ -33,12 +33,16 @@
             offerList : {
                 item1: '1 meal',
                 item2: 'Order from 8am to 12pm',
-                item3: ' x ',
+                item3: '',
                 item4: 'Free delivery'
             }
         },
     ];
 
+    var icon = {
+        checkmark : 'ion-ios-checkmark',
+        close : 'ion-ios-close'
+    };
 
 section.section-plans
     .row
@@ -56,8 +60,8 @@ section.section-plans
                             ul
                                 each item in plan.offerList
                                     .icon-box
-                                        i.icon(class="ion-ios-checkmark")
-                                        li=item
+                                        i.icon(class=(item) ? icon.checkmark : icon.close)
+                                        li!= (item) ? item : '&nbsp;'
                         div
                             a.btn.btn-full(href="#")
                                 span Sign up now
