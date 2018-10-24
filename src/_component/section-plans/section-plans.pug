@@ -29,7 +29,7 @@
             title: 'Starter',
             price: '$19',
             description: ' / per meal',
-            //meal: ` `,
+            meal: ``,
             offerList : {
                 item1: '1 meal',
                 item2: 'Order from 8am to 12pm',
@@ -54,7 +54,8 @@ section.section-plans
                     .plan-box
                         div
                             h3=plan.title
-                            p.plan-price=plan.price + plan.description
+                            p.plan-price=plan.price 
+                                span.plan-price--small=plan.description
                             p.plan-per-meal!= (plan.meal) ? plan.meal : '&nbsp;'
                         div
                             ul
@@ -63,5 +64,6 @@ section.section-plans
                                         i.icon(class=(item) ? icon.checkmark : icon.close)
                                         li!= (item) ? item : '&nbsp;'
                         div
-                            a.btn.btn-full(href="#")
-                                span Sign up now
+                            .flex-container
+                                a.btn.btn-full(href="#")
+                                    span Sign up now
