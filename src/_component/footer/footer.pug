@@ -1,0 +1,22 @@
+-
+    var navigationList = {
+        footer_nav : ['About us', 'Blog', 'Press', 'iOS App', 'Android App'],
+        social_links: ['ion-logo-facebook','ion-logo-twitter','ion-logo-googleplus','ion-logo-instagram']
+    };
+
+footer
+    .row
+        .flex-container
+            each nav, key in navigationList
+                .flex-item
+                    ul(class=key)
+                        each link in nav
+                            if key === 'footer_nav'
+                                li
+                                    a(href="#")=link
+                            else if key === 'social_links'
+                                li
+                                    a(href="#")
+                                        i.icon(class=link)
+    .row
+        p Copyright &copy; 2018 Iulian Carnaru
