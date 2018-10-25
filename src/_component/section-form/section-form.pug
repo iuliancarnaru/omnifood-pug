@@ -1,11 +1,38 @@
 -
     var heading = `We're happy to hear form you`;
-    var label = {
-        name: 'Name',
-        email: 'Email',
-        drop: 'How did you find us?',
-        newsletter: 'Newsletter',
-        write: 'Drop us a line'
+    var contactForm = {
+        text: {
+            label: 'Name',
+            type: 'text',
+            placeholder: 'Your name'
+        },
+        email: {
+            label: 'Email',
+            type: 'email',
+            placeholder: 'Your email'
+        },
+        select : {
+            type: 'select',
+            label: 'How did you find us?',
+            option: ['friends','search','add','other']
+        },
+        checkbox: {
+            type: 'checkbox',
+            label: 'Newsletter',
+            text: 'Yes, please'
+        },
+        textarea: {
+            type: 'textarea',
+            label: 'Drop us a line',
+            name: 'message',
+            placeholder: 'Your message',
+            cols: 20,
+            rows: 10
+        },
+        submit: {
+            type: 'submit',
+            value: 'Send it'
+        }
     };
 
 
@@ -14,39 +41,44 @@ section.section-form
         h2.heading-secondary=heading
     .row
         form.contact-form(action="#", method="post")
-            .flex-row
-                .flex-item-left
-                    label=label.name
-                .flex-item-right
-                    input(type="text", name="name", id="name", placeholder="Your name", required)
-            .flex-row
-                .flex-item-left
-                    label=label.email
-                .flex-item-right
-                    input(type="email", name="email", id="email", placeholder="Your email", required)
-            .flex-row
-                .flex-item-left
-                    label=label.drop
-                .flex-item-right
-                    select#find-us(name="find-us")
-                        option(value="friends") Friends
-                        option(value="search", selected) Search engine
-                        option(value="add") Advertisment
-                        option(value="other") Other way
-            .flex-row
-                .flex-item-left
-                    label=label.newsletter
-                .flex-item-right
-                    input#news(type="checkbox", name="news", checked)
-                    span Yes,please
-            .flex-row
-                .flex-item-left
-                    label=label.write
-                .flex-item-right
-                    textarea#message(name="message", cols="30", rows="10", placeholder="Your message")
-            .flex-row
-                .flex-item-left
-                    p &nbsp;
-                .flex-item-right
-                    input(type="submit", value="Send it")
-
+            each input, key in contactForm
+                .flex-row
+                    .flex-item-left
+                        label=input.label
+                    .flex-item-right
+                        if input.type === 'text'
+                            input(
+                                type=input.type, 
+                                name=input.name, 
+                                id=input.name, 
+                                placeholder=input.placeholder, 
+                                required)
+                        else if input.type === 'email'
+                            input(
+                                type=input.type, 
+                                name=input.name, 
+                                id=input.name, 
+                                placeholder=input.placeholder,
+                                required)
+                        else if input.type === 'select'
+                            select#find-us(name="find-us")
+                                option(value="friends") Friends
+                                option(value="search", selected) Search engine
+                                option(value="add") Advertisment
+                                option(value="other") Other way
+                        else if input.type === 'checkbox'
+                            input#news(
+                                type=input.type,
+                                 name=input.name,
+                                checked)
+                            span=input.text
+                        else if input.type === 'textarea'
+                            textarea#message(
+                                name=input.name, 
+                                cols=input.cols, 
+                                rows=input.rows, 
+                                placeholder=input.placeholder)
+                        else if input.type === 'submit'
+                            input(
+                                type=input.type,
+                                value=input.value)
