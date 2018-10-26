@@ -10,15 +10,19 @@ header {
 
 .hero-text-box {
   position: absolute;
-  width: 70%;
+  width: 114rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   @media only screen and (max-width: 1200px) {
-    width: 65%;
+    width: 100%;
     padding: 0 2%;
   }
+
+  @media only screen and (max-width: 767px) {
+    padding: 0 4%;
+} 
 
   &__heading {
     //max-width: 100%;
@@ -33,10 +37,6 @@ header {
       max-width: 100%;
       font-size: 4.5rem;
       display: inline-block;
-
-      @media only screen and (max-width: 1200px) {
-
-      }
     }
   }
 
@@ -107,6 +107,10 @@ header {
 .main-nav {
     list-style: none;
     font-size: 1.8rem;
+
+    @media only screen and (max-width: 767px) {
+      display: none;
+    } 
 
     li {
         display: inline-block;

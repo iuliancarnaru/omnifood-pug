@@ -5,6 +5,11 @@
     width: 70%;
     margin-left: 15%;
     margin-bottom: 4rem;
+
+    @media only screen and (max-width: 1023px) {
+      width: 80%;
+      margin-left: 10%;
+    }
   }
 
   .flex-container {
@@ -18,6 +23,10 @@
 
   .flex-item {
     flex: 0 0 22.5%;
+
+    @media only screen and (max-width: 767px) {
+      flex: 0 0 100%;
+    } 
 
     display: flex;
     flex-direction: column;
